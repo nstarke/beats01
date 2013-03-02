@@ -1,0 +1,36 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>Beats 01</title>
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+		<script src="lib/Audiolet.js"></script>
+		<script src="lib/audiofile.js"></script>
+		<script src="beats-01.js"></script>
+	</head>
+	<body>
+		<h1>Beats 01</h1>
+		<h2>This will only work with the Web Audio API enabled</h2>
+		<h3>Go to "about:flags" in chrome to enable the Web Audio API</h3>
+		<input type="button" id="play" value="Play" />
+		<input type="button" id="stop" value="Stop" />
+		<script>
+			$(function() {
+				$('#stop').hide();
+				$('#play').on('click', function() {
+					$('#stop').show();
+					$('#play').hide();
+					var beats = new Beats01();
+					//beats.play();
+				});
+				$('#stop').on('click', function() {
+					$('#play').show();
+					$('#stop').hide();
+					window.location.reload();
+				});
+			});
+
+		</script>
+	</body>
+</html>
